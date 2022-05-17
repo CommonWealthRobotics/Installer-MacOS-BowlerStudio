@@ -35,15 +35,6 @@ jobs:
             GITHUB_TOKEN: ${{ github.token }}
       with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./installer-scripts/linux/build/bowlerstudio
+            asset_path: ./bowlerstudio
             asset_name: bowlerstudio
-            asset_content_type: application/binary
-    - name: upload BowlerStudio Icon
-      uses: actions/upload-release-asset@v1
-      env:
-            GITHUB_TOKEN: ${{ github.token }}
-      with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./archive/splash.png
-            asset_name: splash.png
             asset_content_type: application/binary
