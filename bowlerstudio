@@ -28,7 +28,7 @@ testget () {
 		else
 		echo Downloading from https://www.azul.com/downloads/zulu/zulufx/ 
 		echo downloading https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz
-		curl https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz  -o $2$1.tar.gz
+		curl -L https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz  -o $2$1.tar.gz
 	fi
 }
 
@@ -38,7 +38,7 @@ if (! test -e $JVMDIR/$JVERELEASE.tar.gz) then
 	unzipifiy $JVERELEASE $JVMDIR
 fi
 if (! test -e $AUTOUPDATE) then
-	curl https://github.com/CommonWealthRobotics/LatestFromGithubLaunch/releases/latest/download/LatestFromGithubLaunch.jar -o $AUTOUPDATE
+	curl -L https://github.com/CommonWealthRobotics/LatestFromGithubLaunch/releases/latest/download/LatestFromGithubLaunch.jar -o $AUTOUPDATE
 fi
 
 
