@@ -10,6 +10,10 @@ SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 #https://cdn.azul.com/zulu/bin/zulu8.62.0.19-ca-fx-jdk8.0.332-macosx_x64.zip
 JVERELEASE=zulu8.62.0.19-ca-fx-jdk8.0.332-macosx_x64
+if [[ $(uname -m) == 'arm64' ]]; then
+  echo "M1 Mac detected https://cdn.azul.com/zulu/bin/zulu8.62.0.19-ca-fx-jdk8.0.332-macosx_aarch64.tar.gz" 
+  JVERELEASE=zulu8.62.0.19-ca-fx-jdk8.0.332-macosx_aarch64
+fi
 JVMDIR=$HOME/bin/java8/
 JAR=BowlerStudio.jar
 AUTOUPDATE=$HOME/bin/java8/LatestFromGithubLaunch.jar
